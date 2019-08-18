@@ -1,0 +1,15 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-color: rgba(158, 175, 175, 0.877);
+    background-blend-mode: soft-light;
+
+}
+
+img {
+    height: 180px;
+    width: 300px;
+}
+
+.visable {
+    visibility: hidden;
+}

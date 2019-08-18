@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+</head>
+<body>
+    <div class="row justify-content-lg-center">
+        <h1>RPG Game</h1>
+    </div>
+    <div class="row justify-content-lg-center">
+    <h2>The Fighters</h2>
+    </div>
+
+    <div class="row justify-content-around">
+    <div class="move fighter h5" id=fighter1><img class="rounded" src=assets/images/yoda.jpg><p>Yoda</p></div>
+    <div class="move fighter h5" id=fighter2><img class="rounded" src=assets/images/darthvader.jpg><p>Darth Vader</p></div>
+    <div class="move fighter h5" id=fighter3><img class="rounded" src=assets/images/bobafett.jpg><p>Boba Fett</p></div>
+    <div class="move fighter h5" id=fighter4><img class="rounded" src=assets/images/stormtrooper.jpg><p>Stormtrooper</p></div>
+    </div>
+
+    <div class="row">
+        <container class="offset-lg-2 col-lg-3">
+                <h2 class="">Your Champion</h2>
+                <div class="" id=champion></div> 
+                <div class="h2 text-primary" id=championHealth></div>
+                <div class="h5" id="championAttack"></div>
+        </container>
+        <container class="offset-lg-3 col-lg-3">
+                <h2 class="">The Challenger</h2>
+                <div class="" id=challenger></div>
+                <div class="h2 text-danger" id=challengerHealth></div>
+                <div class="h5" id="challengerAttack"></div>
+        </container>
+    </div>
+    
+    <div class="row justify-content-around">
+        <button class="btn-info invisable visable" id="attackButton" onclick=attack()> Attack</button>
+    </div>
+
+    <div class="row justify-content-around">
+        <button class="btn-info invisable visable" id="reload" onclick=reload()> Try Again!</button>
+    </div>
+
+    <script src="assets/js/javascript.js"></script>
+
+
+</body>
+</html>
