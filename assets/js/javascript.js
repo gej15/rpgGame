@@ -1,4 +1,8 @@
-let fighter1DOM = document.querySelector('#fighter1')
+       
+       
+       
+       
+        let fighter1DOM = document.querySelector('#fighter1')
         let fighter2DOM = document.querySelector('#fighter2')
         let fighter3DOM = document.querySelector('#fighter3')
         let fighter4DOM = document.querySelector('#fighter4')
@@ -24,7 +28,7 @@ let fighter1DOM = document.querySelector('#fighter1')
             health: 160,
             attackPower: 30,
             counterAttack: 25,
-            hit: ' force griped',
+            hit: ' force choke',
             dodge: 10,
         }
         const fighter3 = {
@@ -47,69 +51,100 @@ let fighter1DOM = document.querySelector('#fighter1')
         let challenger = ''
         let wins = 0
 
-       
+       alert("Choose a champion!")
 
         document.querySelector("#fighter1").onclick = function() {
-            if (operator === 0) {
+            if (champion === fighter1){
+                
+            }
+            else if (operator === 0) {
                 championDOM.append(fighter1DOM)
                 champion = fighter1
+                championAttackDOM.textContent = "Yoda's attack is force push"
+                operator++
+                
             }
             else if (operator === 1) {
                 operator++;
                 challengerDOM.append(fighter1DOM)
                 challenger = fighter1
+                challengerAttackDOM.textContent = "Yoda's attack is force push"
+                operator++
                 show()
+                update()
             } else  {
                 operator = 1
             }
-            operator++
-            update()
+           
             
         }
         document.querySelector("#fighter2").onclick = function() {
-            if (operator === 0) {
+            if (champion === fighter2){
+                //this is a black statement to stop game from breaking
+            }else if (operator === 0) {
                 championDOM.append(fighter2DOM)
                 champion = fighter2
+                championAttackDOM.textContent = "Darth Vader's attack is force choke"
+               
+                ++operator
 
             } else if (operator === 1) {
                 challengerDOM.append(fighter2DOM)
                 challenger = fighter2
+                challengerAttackDOM.textContent = "Darth Vader's attack is force choke"
+                ++operator
                 show()
-                
+                update()
             }  else  {
                 operator = 1
             }
-            ++operator;
-            update()
+            ;
+            
             
         }
         document.querySelector("#fighter3").onclick = function() {
-            if (operator === 0) {
+            if (champion === fighter3){
+                //this is a black statement to stop game from breaking
+            }else if (operator === 0) {
                 championDOM.append(fighter3DOM);
                 champion = fighter3
+                championAttackDOM.textContent = "Boba Fett's attack is a blaster"
+          
+                ++operator
             } else if (operator === 1) {
                 challengerDOM.append(fighter3DOM);
                 challenger = fighter3
+                challengerAttackDOM.textContent = "Boba Fett's attack is a blaster"
+                ++operator
                 show()
+                update()
             }  else  {
                 operator = 1
             }
-            ++operator;
-            update()
+          
+            
         }
         document.querySelector("#fighter4").onclick = function() {
-            if (operator === 0) {
+            if (champion === fighter4){
+                //this is a black statement to stop game from breaking
+            }else if (operator === 0) {
                 championDOM.append(fighter4DOM);  
                 champion = fighter4 
+                championAttackDOM.textContent = "Stormtrooper's attack is a blaster"
+            
+                ++operator
             } else if (operator === 1) {
                 challengerDOM.append(fighter4DOM);
                 challenger = fighter4
+                championAttackDOM.textContent = "Stormtrooper's attack is a blaster"
+                ++operator
                 show()
+                update()
             }  else  {
                 operator = 1
             }
-            ++operator;
-            update()
+          
+            
         }
 
         function show() {
