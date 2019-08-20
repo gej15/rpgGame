@@ -12,6 +12,7 @@
         let challengerHealthDOM = document.querySelector('#challengerHealth')
         let championAttackDOM = document.querySelector('#championAttack')
         let challengerAttackDOM = document.querySelector('#challengerAttack')
+        let dispalyTextDOM = document.querySelector('#displayText')
         let operator = 0
         let dodgeNumber = 0
         let dodgeNumber2 = 0
@@ -36,7 +37,7 @@
             health: 140,
             attackPower: 40,
             counterAttack: 25,
-            hit: ' pew pewed',
+            hit: ' pew pew',
             dodge: 15,
         }
         const fighter4 = {
@@ -51,7 +52,7 @@
         let challenger = ''
         let wins = 0
 
-       alert("Choose a champion!")
+       
 
         document.querySelector("#fighter1").onclick = function() {
             if (champion === fighter1){
@@ -62,6 +63,7 @@
                 champion = fighter1
                 championAttackDOM.textContent = "Yoda's attack is force push"
                 operator++
+                dispalyTextDOM.textContent = "Choose a challenger"
                 
             }
             else if (operator === 1) {
@@ -69,6 +71,7 @@
                 challengerDOM.append(fighter1DOM)
                 challenger = fighter1
                 challengerAttackDOM.textContent = "Yoda's attack is force push"
+                dispalyTextDOM.textContent = "ATTACK!!"
                 operator++
                 show()
                 update()
@@ -85,6 +88,7 @@
                 championDOM.append(fighter2DOM)
                 champion = fighter2
                 championAttackDOM.textContent = "Darth Vader's attack is force choke"
+                dispalyTextDOM.textContent = "Choose a challenger"
                
                 ++operator
 
@@ -93,6 +97,7 @@
                 challenger = fighter2
                 challengerAttackDOM.textContent = "Darth Vader's attack is force choke"
                 ++operator
+                dispalyTextDOM.textContent = "ATTACK!!"
                 show()
                 update()
             }  else  {
@@ -109,12 +114,14 @@
                 championDOM.append(fighter3DOM);
                 champion = fighter3
                 championAttackDOM.textContent = "Boba Fett's attack is a blaster"
+                dispalyTextDOM.textContent = "Choose a challenger"
           
                 ++operator
             } else if (operator === 1) {
                 challengerDOM.append(fighter3DOM);
                 challenger = fighter3
                 challengerAttackDOM.textContent = "Boba Fett's attack is a blaster"
+                dispalyTextDOM.textContent = "ATTACK!!"
                 ++operator
                 show()
                 update()
@@ -131,12 +138,13 @@
                 championDOM.append(fighter4DOM);  
                 champion = fighter4 
                 championAttackDOM.textContent = "Stormtrooper's attack is a blaster"
-            
+                dispalyTextDOM.textContent = "Choose a challenger"
                 ++operator
             } else if (operator === 1) {
                 challengerDOM.append(fighter4DOM);
                 challenger = fighter4
                 championAttackDOM.textContent = "Stormtrooper's attack is a blaster"
+                dispalyTextDOM.textContent = "ATTACK!!"
                 ++operator
                 show()
                 update()
@@ -183,9 +191,9 @@
             update()
             console.log(champion.health)  
             if (champion.health <= 0 ) {
-            alert('loser')
-            document.querySelector('#reload').classList.toggle("visable")
-            show()
+                dispalyTextDOM.textContent = "YOU SUCK AT THIS! TRY AGAIN!"
+                document.querySelector('#reload').classList.toggle("visable")
+                show()
 
             } else  if (challenger.health <= 0) {
                 --operator
@@ -198,13 +206,13 @@
                 show()
                 ++wins
                 if (wins === 3) {
-                    alert('You are the grand master!')
+                    dispalyTextDOM.textContent = "YOU ARE THE GRAND MASTER!!"
                     document.querySelector('#reload').classList.toggle("visable")
                     challengerHealthDOM.textContent = "dead"
                     
                 } else {
                     challengerHealthDOM.textContent = "dead"
-                    alert('Pick a new challenger!')
+                    dispalyTextDOM.textContent = "Pick a new challenger"
                 }
 
 
